@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def check_form_errors(model)
     if model.errors.any?
-      content_tag :div, "Há erros no formulário, por favor verifique.",
+      content_tag :div, t('general.form_error'),
                   :id => 'error_explanation'
     end
   end
