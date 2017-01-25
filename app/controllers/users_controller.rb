@@ -10,15 +10,16 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-	end	
+	end
 
 	def create
 		@user = User.new(user_params)
 		if @user.save then
+			SignupMailer.confirm_email(@user).deliver
 			redirect_to @user, notice:'Cadastro criado com sucesso!'
 		else
 			render action: :new
-		end		
+		end
 	end
 
 	def update
@@ -27,8 +28,8 @@ class UsersController < ApplicationController
 		if @user.update(user_params)
 			redirect_to @user, notice: 'Cadastro atualizado com sucesso'
 		else
-			render action: :edit	
-		end	
+			render action: :edit
+		end
 	end
 
 	private
