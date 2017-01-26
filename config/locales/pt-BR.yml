@@ -30,6 +30,10 @@ pt:
       edit: 'Editar perfil'
       location: "Localização: %{location}"
       bio: "Bio: %{bio}"
+  user_sessions:
+    new:
+      title: 'Login'
+      sign_up: 'Cadastre-se'
   links:
     back: Voltar
 
@@ -55,6 +59,28 @@ pt:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+
+  activemodel:
+    attributes:
+      user_session:
+        email: Email
+        password: Senha
+    errors:
+      models:
+        user_session:
+            attributes:
+              base:
+                invalid_login: "Usuário ou senha inválidos"
+
+  flash:
+    notice:
+      sign_in: "Login efetuado com sucesso"
+
+  helpers:
+    submit:
+      user_session:
+        create: 'Entrar'
+
   date:
     abbr_day_names:
     - Dom

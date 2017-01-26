@@ -1,0 +1,1 @@
+Colchonet::Application.config.secret_token = 'df5b8064e98a6cd9b16614145a38311ffcf96dfa6bbcdcf99f9b50d34be19fc42cbfb7755e453d30d4a756850283455236b9f42acca9abd70c69b019114a538b'

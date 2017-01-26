@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   before_create :generate_token
 
+  scope :confirmed, -> {
+    where('confirmed_at is  not null')
+  }
+
   def generate_token
     self.confirmation_token = SecureRandom.urlsafe_base64
   end
@@ -22,5 +26,11 @@ class User < ApplicationRecord
 
   def confirmed?
     confirmed_at.present?
+  end
+
+  def self.authenticate(email, password)
+    confirmed.
+      find_by_email(email).
+      try(:authenticate, password)
   end
 end
