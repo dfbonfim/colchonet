@@ -80,6 +80,9 @@ pt:
     notice:
       sign_in: "Login efetuado com sucesso"
       signed_out: "Logout efetuado com sucesso. Até logo"
+      room_created: "Quarto criado com sucesso"
+
+
     alert:
       needs_login: "Para continuar, você precisa estar logado"
 
