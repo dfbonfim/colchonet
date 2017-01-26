@@ -15,7 +15,11 @@ pt:
 
   layout:
     rooms: Quartos
+    new_room: Cadastre seu quarto!
     signup: Cadastro
+    signin: Login
+    my_profile: Meu perfil
+    signout: Logout
 
   general:
     form_error: Há erros no formulário, por favor verifique.
@@ -75,6 +79,10 @@ pt:
   flash:
     notice:
       sign_in: "Login efetuado com sucesso"
+      signed_out: "Logout efetuado com sucesso. Até logo"
+    alert:
+      needs_login: "Para continuar, você precisa estar logado"
+
 
   helpers:
     submit:

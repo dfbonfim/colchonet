@@ -6,8 +6,6 @@ class UserSessionsController < ApplicationController
   def create
     @session = UserSession.new(session, params[:user_session])
 
-    p params
-
     if @session.authenticate
       redirect_to root_path, :notice => t('flash.notice.sign_in')
     else
@@ -16,5 +14,7 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
+    user_session.destroy
+    redirect_to root_path, :notice => t('flash.notice.signed_out')
   end
 end
